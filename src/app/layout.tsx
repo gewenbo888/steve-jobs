@@ -27,6 +27,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Gewenbo", url: "https://psyverse.fun" }],
   alternates: { canonical: "/", languages: { en: "/", "zh-CN": "/", "x-default": "/" } },
   openGraph: {
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "Steve Jobs · 《史蒂夫·乔布斯传》深度解读 — An Analytical Companion to Walter Isaacson’s Authorized Biography" }],
     title: "Steve Jobs — An Analytical Companion",
     description:
       "A bilingual study guide to Walter Isaacson's «Steve Jobs»: the art/technology intersection, simplicity, the reality distortion field, integration, focus, the products-first creed, and the fall-and-return arc — rebuilt as original interactive visualizations. Independent commentary, not the book.",
@@ -37,6 +38,7 @@ export const metadata: Metadata = {
     alternateLocale: ["zh_CN"],
   },
   twitter: {
+    images: ["/twitter-image.png"],
     card: "summary_large_image",
     title: "Steve Jobs — An Analytical Companion",
     description: "A bilingual analytical companion to Walter Isaacson's «Steve Jobs»: art × technology, simplicity, the reality distortion field, integration, focus, and the fall-and-return arc — with original interactive visualizations.",
