@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --void: #0a0a0b;
+  --flux: #2997ff;
+  --iris: #a663cc;
+  --leaf: #61bb46;
+  --gold: #f6a623;
+  --plasm: #ff5e5b;
+  --steel: #a1a1a6;
+  --ink: #f5f5f7;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--void);
+  color: var(--ink);
+}
+
+body {
+  background-color: #0a0a0b;
+  background-image:
+    radial-gradient(ellipse 1200px 640px at 8% -8%, rgba(41, 151, 255, 0.10), transparent 60%),
+    radial-gradient(ellipse 1000px 560px at 94% 2%, rgba(166, 99, 204, 0.10), transparent 62%),
+    radial-gradient(ellipse 900px 560px at 50% 118%, rgba(246, 166, 35, 0.05), transparent 60%);
+  font-family: "Newsreader", ui-serif, Georgia, serif;
+  letter-spacing: 0.002em;
+}
+
+::selection { background: rgba(41, 151, 255, 0.35); color: #fff; }
+
+.display { font-family: "Manrope", ui-sans-serif, system-ui, sans-serif; font-weight: 700; letter-spacing: -0.022em; }
+.zh { font-family: "Noto Serif SC", serif; }
+.zhsans { font-family: "Noto Sans SC", sans-serif; }
+.label-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.26em; text-transform: uppercase; font-size: 0.64rem; color: var(--flux);
+}
+
+/* the 1977 six-stripe Apple rainbow — reserved for the headline */
+.spark-text {
+  background: linear-gradient(95deg, #61bb46 0%, #f6a623 24%, #ff5e5b 46%, #e0433f 58%, #a663cc 78%, #2997ff 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.flux-text { color: #6cb8ff; }
+.iris-text { color: #c79be0; }
+.leaf-text { color: #8fd47a; }
+.steel-text { color: #a1a1a6; }
+.plasm-text { color: #ff8a87; }
+.gold-text {
+  color: #ffd791;
+  text-shadow: 0 0 26px rgba(246, 166, 35, 0.4), 0 0 76px rgba(246, 166, 35, 0.16);
+}
+.flux-glow {
+  color: #6cb8ff;
+  text-shadow: 0 0 26px rgba(41, 151, 255, 0.5), 0 0 80px rgba(41, 151, 255, 0.2);
+}
+
+/* brushed-aluminum glass panel */
+.panel {
+  background: linear-gradient(160deg, rgba(52, 52, 58, 0.4), rgba(17, 17, 19, 0.92));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(9px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.panel:hover { border-color: rgba(41, 151, 255, 0.42); box-shadow: 0 0 44px -18px rgba(41,151,255,0.6); }
+
+.panel-iris { border-color: rgba(166,99,204,0.2); }
+.panel-iris:hover { border-color: rgba(166,99,204,0.55); box-shadow: 0 0 44px -18px rgba(166,99,204,0.55); }
+.panel-leaf { border-color: rgba(97,187,70,0.2); }
+.panel-leaf:hover { border-color: rgba(97,187,70,0.55); box-shadow: 0 0 44px -18px rgba(97,187,70,0.5); }
+.panel-steel { border-color: rgba(161,161,166,0.16); }
+.panel-steel:hover { border-color: rgba(161,161,166,0.45); box-shadow: 0 0 44px -18px rgba(161,161,166,0.4); }
+.panel-plasm { border-color: rgba(255,94,91,0.2); }
+.panel-plasm:hover { border-color: rgba(255,94,91,0.55); box-shadow: 0 0 44px -18px rgba(255,94,91,0.55); }
+.panel-gold { border-color: rgba(246,166,35,0.18); }
+.panel-gold:hover { border-color: rgba(246,166,35,0.5); box-shadow: 0 0 44px -18px rgba(246,166,35,0.5); }
+
+.rule-flux {
+  background: linear-gradient(90deg, transparent, rgba(97,187,70,0.5) 10%, rgba(246,166,35,0.5) 32%, rgba(255,94,91,0.5) 52%, rgba(166,99,204,0.5) 74%, rgba(41,151,255,0.6) 92%, transparent);
+}
+
+/* drifting mote */
+@keyframes drift {
+  0% { transform: translateY(0) scale(0.9); opacity: 0; }
+  18% { opacity: 0.85; }
+  100% { transform: translateY(-260px) scale(1.25); opacity: 0; }
+}
+.drift { animation: drift linear infinite; }
+
+/* flowing dashed line */
+@keyframes flow { to { stroke-dashoffset: -48; } }
+.flow { stroke-dasharray: 5 8; animation: flow 1.7s linear infinite; }
+
+/* pulse */
+@keyframes qpulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+.pulse { animation: qpulse 2.4s ease-in-out infinite; }
+
+/* slow spin */
+@keyframes spin360 { to { transform: rotate(360deg); } }
+.spin-slow { animation: spin360 30s linear infinite; transform-origin: center; }
+.spin-rev { animation: spin360 44s linear infinite reverse; transform-origin: center; }
+
+@keyframes riseIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+.rise-in { animation: riseIn 0.9s cubic-bezier(0.2,0.7,0.2,1) both; }
+.lang-fade { animation: riseIn 0.45s ease both; }
+
+/* breathing glow */
+@keyframes breathe { 0%,100% { opacity: 0.55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.06); } }
+.breathe { animation: breathe 4.5s ease-in-out infinite; }
+
+/* twinkle */
+@keyframes twinkle { 0%,100% { opacity: 0.25; } 50% { opacity: 1; } }
+.twinkle { animation: twinkle 3.2s ease-in-out infinite; }
+
+::-webkit-scrollbar { width: 10px; background: #0a0a0b; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #232327, #48484f); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #48484f, #0071e3); }
